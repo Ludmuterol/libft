@@ -6,7 +6,7 @@
 #    By: tpeters <tpeters@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/22 17:11:21 by tpeters           #+#    #+#              #
-#    Updated: 2022/04/08 15:27:49 by tpeters          ###   ########.fr        #
+#    Updated: 2022/04/08 15:55:37 by tpeters          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,9 +31,12 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	ar cr $(NAME) $(OBJS)
 
-#$(OBJS) : $(SRCS)
-#	$(CC) $(CFLAGS) -c $(SRCS)
+$(OBJS) : $(SRCS)
+	$(CC) $(CFLAGS) -c $(SRCS)
 	
+$(BOBJS) : $(BSRCS)
+	$(CC) $(CFLAGS) -c $(BSRCS)
+
 clean :
 	rm -f $(OBJS) $(BOBJS)
 
