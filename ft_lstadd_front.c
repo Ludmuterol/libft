@@ -6,7 +6,7 @@
 /*   By: tpeters <tpeters@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 17:00:21 by tpeters           #+#    #+#             */
-/*   Updated: 2022/04/08 15:28:34 by tpeters          ###   ########.fr       */
+/*   Updated: 2022/04/08 15:50:41 by tpeters          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,4 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 		return ;
 	new->next = *lst;
 	*lst = new;
-
 }
