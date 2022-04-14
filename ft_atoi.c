@@ -27,7 +27,6 @@ int	ft_atoi(const char *nptr)
 {
 	long	i;
 	int		is_neg;
-	long	border;
 
 	is_neg = 0;
 	while (is_space(*nptr))
@@ -36,13 +35,9 @@ int	ft_atoi(const char *nptr)
 		if (*nptr++ == '-')
 			is_neg = 1;
 	i = 0;
-	border = 922337203685477580;
 	while (ft_isdigit(*nptr))
 	{
-		if (i < border || (i == border && *nptr <= '7'))
-			i = i * 10 + *nptr - '0';
-		else
-			return (!is_neg * -1);
+		i = i * 10 + *nptr - '0';
 		nptr++;
 	}
 	if (is_neg)
