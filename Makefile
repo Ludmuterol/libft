@@ -6,7 +6,7 @@
 #    By: tpeters <tpeters@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/22 17:11:21 by tpeters           #+#    #+#              #
-#    Updated: 2022/04/08 15:55:37 by tpeters          ###   ########.fr        #
+#    Updated: 2022/06/06 17:11:39 by tpeters          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,14 @@ BOBJS = $(BSRCS:.c=.o)
 
 NAME = libft.a
 CFLAGS =-Wall -Wextra -Werror
+
+ifeq ($(OS),Windows_NT)
+RM_FUNC = del 
+CC = gcc
+else
+RM_FUNC = rm
 CC = cc
+endif
 
 all : $(NAME)
 
@@ -38,14 +45,15 @@ $(BOBJS) : $(BSRCS)
 	$(CC) $(CFLAGS) -c $(BSRCS)
 
 clean :
-	rm -f $(OBJS) $(BOBJS)
+	$(RM_FUNC) -f $(OBJS) $(BOBJS)
 
 fclean : clean
-	rm -f $(NAME)
+	$(RM_FUNC) -f $(NAME)
 
-re : fclean all
+re: fclean
+	$(MAKE)
 
 bonus : $(OBJS) $(BOBJS)
 	ar cr $(NAME) $(OBJS) $(BOBJS)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
