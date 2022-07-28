@@ -6,7 +6,7 @@
 /*   By: tpeters <tpeters@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 16:29:09 by tpeters           #+#    #+#             */
-/*   Updated: 2022/07/28 16:26:07 by tpeters          ###   ########.fr       */
+/*   Updated: 2022/07/28 17:03:08 by tpeters          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,16 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+/* GET_NEXT_LINE */
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+# ifndef FD_SIZE
+#  define FD_SIZE 1024
+# endif
+
+char	*get_next_line(int fd);
 
 #endif
