@@ -6,14 +6,18 @@
 /*   By: tpeters <tpeters@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 16:29:09 by tpeters           #+#    #+#             */
-/*   Updated: 2022/04/08 15:18:14 by tpeters          ###   ########.fr       */
+/*   Updated: 2022/07/28 16:26:07 by tpeters          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
-# include <unistd.h>
+# ifdef _WIN32
+#  include <io.h>
+# else
+#  include <unistd.h>
+# endif
 
 /* PART 1 */
 int		ft_isalpha(int c);
