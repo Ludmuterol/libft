@@ -6,7 +6,7 @@
 /*   By: tpeters <tpeters@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 16:29:09 by tpeters           #+#    #+#             */
-/*   Updated: 2022/07/28 17:03:08 by tpeters          ###   ########.fr       */
+/*   Updated: 2022/08/03 17:13:59 by tpeters          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 # endif
 
 char	*get_next_line(int fd);
-
+int		ft_strcmp(char *a, char *b);
+double	ft_atod(char *nptr, int *err);
 #endif
