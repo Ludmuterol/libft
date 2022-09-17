@@ -6,7 +6,7 @@
 /*   By: tpeters <tpeters@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 01:26:32 by tpeters           #+#    #+#             */
-/*   Updated: 2022/05/04 14:44:40 by tpeters          ###   ########.fr       */
+/*   Updated: 2022/09/17 13:10:14 by tpeters          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,6 @@ int	hex_len(unsigned long in, int precision)
 	if (precision > len)
 		return (precision);
 	return (len);
-}
-
-int	char_in_set(char c, char const *set)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (set[i])
-	{
-		if (set[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
 }
 
 int	find_first_of(const char *c, char const *set)

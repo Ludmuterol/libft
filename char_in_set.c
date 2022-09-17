@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   char_in_set.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpeters <tpeters@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/26 17:44:24 by tpeters           #+#    #+#             */
-/*   Updated: 2022/09/17 13:09:24 by tpeters          ###   ########.fr       */
+/*   Created: 2022/09/17 13:07:43 by tpeters           #+#    #+#             */
+/*   Updated: 2022/09/17 13:08:33 by tpeters          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strtrim(char const *s1, char const *set)
+int	char_in_set(char c, char const *set)
 {
-	unsigned int	first;
-	unsigned int	last;
+	unsigned int	i;
 
-	if (!s1 || !set)
-		return (NULL);
-	first = 0;
-	last = ft_strlen(s1);
-	while (s1[first])
+	i = 0;
+	while (set[i])
 	{
-		if (!char_in_set(s1[first], set))
-			break ;
-		first++;
+		if (set[i] == c)
+			return (1);
+		i++;
 	}
-	while (last >= first && last > 0)
-	{
-		if (!char_in_set(s1[last - 1], set))
-			break ;
-		last--;
-	}
-	return (ft_substr(s1, first, last - first));
+	return (0);
 }

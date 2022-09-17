@@ -6,7 +6,7 @@
 /*   By: tpeters <tpeters@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 16:29:09 by tpeters           #+#    #+#             */
-/*   Updated: 2022/08/24 17:07:02 by tpeters          ###   ########.fr       */
+/*   Updated: 2022/09/17 13:08:28 by tpeters          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,7 @@ double	ft_atod(char *nptr, int *err);
 /* FT_PRINTF */
 int		ft_printf(const char *form, ...);
 char	*ft_utoa(unsigned int n);
+
+/* OTHER_STUFF */
+int		char_in_set(char c, char const *set);
 #endif
